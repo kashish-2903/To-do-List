@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <label class="dark-toggle">
+  <input type="checkbox" id="darkModeToggle">
+  🌙 Dark Mode
+</label>
+
+  <h1>To-Do List Manager</h1>
+
+  <form id="taskForm">
+    <input type="text" id="taskName" placeholder="Task name" required>
+    <input type="date" id="dueDate" required>
+    <select id="category" required>
+        <option value="">Select Category</option>
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="Urgent">Urgent</option>
+        <option value="Other">Other</option>
+    </select>
+    <button type="submit">Add Task</button>
+    <span id="error" class="error"></span>
+  </form>
+
+  <div class="progress-container">
+  <label>Progress: <span id="progressText">0%</span></label>
+  <div class="progress-bar">
+    <div id="progressFill"></div>
+  </div>
+</div>
+
+
+  <div class="kanban">
+    <div>
+      <h2>Pending Tasks</h2>
+      <ul id="pendingTasks"></ul>
+    </div>
+    <div>
+      <h2>Completed Tasks</h2>
+      <ul id="completedTasks"></ul>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="clearCompleted">Clear Completed Tasks</button>
+    <input type="text" id="search" placeholder="Search tasks">
+    <select id="sort">
+      <option value="">Sort By</option>
+      <option value="due">Due Date</option>
+      <option value="status">Status</option>
+    </select>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
